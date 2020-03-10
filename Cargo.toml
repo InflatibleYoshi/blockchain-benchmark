@@ -1,0 +1,9 @@
+[package]
+name = "blockchain-benchmark"
+version = "0.1.0"
+authors = ["daniel"]
+edition = "2018"
+
+[dependencies]
+tokio = "0.2.13"
+tower-web = "0.3.7"
