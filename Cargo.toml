@@ -5,5 +5,7 @@ authors = ["daniel"]
 edition = "2018"
 
 [dependencies]
-tokio = "0.2.13"
+tera = "1"
+hyper = "0.13"
+tokio = { version = "0.2.13", features = ["full"] }
 tower-web = "0.3.7"
