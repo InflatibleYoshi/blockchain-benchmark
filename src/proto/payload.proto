@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_package = "payload.payloadHandler";
+option java_outer_classname = "payloadHandler";
+
+package payload;
+
+// Interface exported by the server.
+service PayloadHandler {
+
+    // A server-to-client streaming RPC.
+    //
+    rpc benchmarkPayload (stream Transaction) returns (stream Transaction) {}
+
+
+    rpc getJobStatus(JobStatus) returns (JobStatus) {}
+
+}
+
+message Transaction {
+    uint32 id = 1;
+    string sendAddress = 2;
+    string recvAddress = 3;
+    uint32 initSecs = 4;
+    fixed32 initNanos = 5;
+}
+
+enum JobStatus{
+    QUERY = 0;
+    AVAILABLE = 1;
+    OCCUPIED = 2;
+    FINISHED = 3;
+}

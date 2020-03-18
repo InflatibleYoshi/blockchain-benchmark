@@ -37,6 +37,9 @@ impl_web! {
 }
 
 pub fn main() {
+    tonic_build::compile_protos("proto/payload.proto")
+        .unwrap_or_else(|e| panic!("Failed to compile protos {:?}", e));
+
     // Next, we must run our web service.
     //
     // The HTTP service will listen on this address and port.
