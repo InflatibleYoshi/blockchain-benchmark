@@ -11,10 +11,7 @@ service PayloadHandler {
     // A server-to-client streaming RPC.
     //
     rpc benchmarkPayload (stream Transaction) returns (stream Transaction) {}
-
-
     rpc getJobStatus(JobStatus) returns (JobStatus) {}
-
 }
 
 message Transaction {
